@@ -1,58 +1,41 @@
-
 import { Routes } from '@angular/router';
-import { Create } from './pages/create/create/create';
-import { Home } from './pages/home/home';
-import { Future } from './pages/future/future';
-import { WhyEduman } from './pages/why-eduman/why-eduman';
-import { DemoVideo } from './pages/demo-video/demo-video';
-import { GraphicalView } from './pages/graphical-view/graphical-view';
-import { LiveSoftware } from './pages/live-software/live-software';
-import { Tutorial } from './pages/tutorial/tutorial';
-import { PriceList } from './pages/price-list/price-list';
-import { Blog } from './pages/blog/blog';
-import { Support } from './pages/support/support';
-import { FaqPage } from './pages/faq-page/faq-page';
-
 
 export const routes: Routes = [
     {
-        path: '', loadComponent: () => Home, pathMatch: 'full'
+        path: '', loadComponent: () => import('./pages/home/home').then(m => m.Home), pathMatch: 'full'
     },
     {
-        path: 'future', loadComponent: () => Future, pathMatch: 'full'
+        path: 'future', loadComponent: () => import('./pages/future/future').then(m => m.Future), pathMatch: 'full'
     },
     {
-        path: 'why-eduman', loadComponent: () => WhyEduman, pathMatch: 'full'
+        path: 'why-eduman', loadComponent: () => import('./pages/why-eduman/why-eduman').then(m => m.WhyEduman), pathMatch: 'full'
     },
     {
-        path: 'demo/video', loadComponent: () => DemoVideo, pathMatch: 'full'
+        path: 'demo/video', loadComponent: () => import('./pages/demo-video/demo-video').then(m => m.DemoVideo), pathMatch: 'full'
     },
     {
-        path: 'graphical/view', loadComponent: () => GraphicalView, pathMatch: 'full'
+        path: 'graphical/view', loadComponent: () => import('./pages/graphical-view/graphical-view').then(m => m.GraphicalView), pathMatch: 'full'
     },
     {
-        path: 'live-software', loadComponent: () => LiveSoftware, pathMatch: 'full'
+        path: 'live-software', loadComponent: () => import('./pages/live-software/live-software').then(m => m.LiveSoftware), pathMatch: 'full'
     },
     {
-        path: 'tutorial', loadComponent: () => Tutorial, pathMatch: 'full'
+        path: 'tutorial', loadComponent: () => import('./pages/tutorial/tutorial').then(m => m.Tutorial), pathMatch: 'full'
     },
     {
-        path: 'pricing', loadComponent: () => PriceList, pathMatch: 'full'
+        path: 'pricing', loadComponent: () => import('./pages/price-list/price-list').then(m => m.PriceList), pathMatch: 'full'
     },
     {
-        path: 'blog', loadComponent: () => Blog, pathMatch: 'full'
+        path: 'blog', loadComponent: () => import('./pages/blog/blog').then(m => m.Blog), pathMatch: 'full'
     },
     {
-        path: 'support', loadComponent: () => Support, pathMatch: 'full'
+        path: 'support', loadComponent: () => import('./pages/support/support').then(m => m.Support), pathMatch: 'full'
     },
     {
-        path: 'faq', loadComponent: () => FaqPage, pathMatch: 'full'
+        path: 'faq', loadComponent: () => import('./pages/faq-page/faq-page').then(m => m.FaqPage), pathMatch: 'full'
     },
-
     {
-        path: 'create', loadComponent: () => Create, pathMatch: 'full'
+        path: 'create', loadComponent: () => import('./pages/create/create/create').then(m => m.Create), pathMatch: 'full'
     },
-
-
     { path: '**', redirectTo: '' }
 ];

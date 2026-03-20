@@ -54,7 +54,7 @@
                 "styles": true,
                 "fonts": true
               },
-              "extractLicenses": false,
+              "extractLicenses": true,
               "sourceMap": false
             },
             "development": {
