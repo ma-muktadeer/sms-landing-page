@@ -1,6 +1,6 @@
 
 import { Routes } from '@angular/router';
-import { Create} from './pages/create/create/create';
+import { Create } from './pages/create/create/create';
 import { Home } from './pages/home/home';
 import { Future } from './pages/future/future';
 import { WhyEduman } from './pages/why-eduman/why-eduman';
@@ -15,57 +15,44 @@ import { FaqPage } from './pages/faq-page/faq-page';
 
 
 export const routes: Routes = [
-    { 
-        path: '', 
-        component: Home, 
-        pathMatch: 'full' 
+    {
+        path: '', loadComponent: () => Home, pathMatch: 'full'
     },
-    { 
-        path: 'future', 
-        component: Future, pathMatch: 'full'
+    {
+        path: 'future', loadComponent: () => Future, pathMatch: 'full'
     },
-    { 
-        path: 'why-eduman', 
-        component: WhyEduman , pathMatch: 'full'
+    {
+        path: 'why-eduman', loadComponent: () => WhyEduman, pathMatch: 'full'
     },
-    { 
-        path: 'demo/video', 
-        component: DemoVideo , pathMatch: 'full'
+    {
+        path: 'demo/video', loadComponent: () => DemoVideo, pathMatch: 'full'
     },
-    { 
-        path: 'graphical/view', 
-        component: GraphicalView , pathMatch: 'full'
+    {
+        path: 'graphical/view', loadComponent: () => GraphicalView, pathMatch: 'full'
     },
-    { 
-        path: 'live-software', 
-        component: LiveSoftware , pathMatch: 'full'
+    {
+        path: 'live-software', loadComponent: () => LiveSoftware, pathMatch: 'full'
     },
-    { 
-        path: 'tutorial', 
-        component: Tutorial , pathMatch: 'full'
+    {
+        path: 'tutorial', loadComponent: () => Tutorial, pathMatch: 'full'
     },
-    { 
-        path: 'pricing', 
-        component: PriceList , pathMatch: 'full'
+    {
+        path: 'pricing', loadComponent: () => PriceList, pathMatch: 'full'
     },
-    { 
-        path: 'blog', 
-        component: Blog , pathMatch: 'full'
+    {
+        path: 'blog', loadComponent: () => Blog, pathMatch: 'full'
     },
-    { 
-        path: 'support', 
-        component: Support , pathMatch: 'full'
+    {
+        path: 'support', loadComponent: () => Support, pathMatch: 'full'
     },
-    { 
-        path: 'faq', 
-        component: FaqPage , pathMatch: 'full'
+    {
+        path: 'faq', loadComponent: () => FaqPage, pathMatch: 'full'
     },
-   
-    { 
-        path: 'create', 
-       component: Create, pathMatch: 'full' 
+
+    {
+        path: 'create', loadComponent: () => Create, pathMatch: 'full'
     },
-    
-    // ওয়াইল্ডকার্ড রাউট সবার নিচে থাকবে
+
+
     { path: '**', redirectTo: '' }
 ];
