@@ -65,16 +65,6 @@
           },
           "defaultConfiguration": "production"
         },
-        "server": {
-          "options": {
-            "externalDependencies": [
-              "iconv-lite",
-              "mime-db",
-              "express",
-              "body-parser"
-            ]
-          }
-        },
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
