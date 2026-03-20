@@ -1,5 +1,4 @@
-import { NgClass } from '@angular/common';
-import { Component,} from '@angular/core';
+import { Component, } from '@angular/core';
 
 
 interface PricingFeature {
@@ -21,14 +20,13 @@ interface PricingPlan {
 
 @Component({
   selector: 'app-pricing-section',
-  standalone: true,
-  imports: [NgClass],
+  imports: [],
   templateUrl: './pricing-section.html',
   styleUrl: './pricing-section.css',
 })
 export class PricingSection {
- 
- 
+
+
   pricingPlans: PricingPlan[] = [
     {
       name: 'সিলভার',

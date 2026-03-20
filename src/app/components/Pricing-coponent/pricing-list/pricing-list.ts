@@ -11,7 +11,6 @@ interface PricingSection {
 
 @Component({
   selector: 'app-pricing-list',
-  standalone: true,
   imports: [],
   templateUrl: './pricing-list.html',
   styleUrl: './pricing-list.css',

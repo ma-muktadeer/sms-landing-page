@@ -6,7 +6,6 @@ register();
 
 @Component({
   selector: 'app-logo-slider',
-  standalone: true,
   imports: [],
   templateUrl: './logo-slider.html',
   styleUrl: './logo-slider.css',

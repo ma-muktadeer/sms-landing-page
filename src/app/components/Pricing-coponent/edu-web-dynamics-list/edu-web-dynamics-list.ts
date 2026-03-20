@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-edu-web-dynamics-list',
-  standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './edu-web-dynamics-list.html',
 })
 export class EduWebDynamicsList {
-  
+
   pricingData = {
     title: 'শিক্ষা প্রতিষ্ঠানের ডায়নামিক ওয়েবসাইটের মূল্য',
     bannerText: 'কোডিং জানার প্রয়োজন নেই ওয়েবসাইট চালান সহজেই',

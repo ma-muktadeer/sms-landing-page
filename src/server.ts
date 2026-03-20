@@ -23,7 +23,8 @@ const angularApp = new AngularNodeAppEngine();
  * });
  * ```
  */
-
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 /**
  * Serve static files from /browser
  */

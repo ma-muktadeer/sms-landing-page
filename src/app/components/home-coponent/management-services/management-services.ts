@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-management-services',
-  standalone: true,
   imports: [],
   templateUrl: './management-services.html',
   styleUrl: './management-services.css',

@@ -3,8 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-smart-features',
-  standalone: true,
-  imports: [], // কোনো মডিউল দরকার নেই
+  imports: [],
   templateUrl: './smart-features.html',
   styleUrl: './smart-features.css',
 })

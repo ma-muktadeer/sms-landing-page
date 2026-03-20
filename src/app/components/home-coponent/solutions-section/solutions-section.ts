@@ -11,7 +11,6 @@ interface Solution {
 
 @Component({
   selector: 'app-solutions-section',
-  standalone: true,
   imports: [],
   templateUrl: './solutions-section.html',
   styleUrl: './solutions-section.css',

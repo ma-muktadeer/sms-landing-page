@@ -4,14 +4,13 @@ import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-feature-walkthrough',
-  standalone: true,
   templateUrl: './feature-walkthrough.html',
   styleUrl: './feature-walkthrough.css'
 })
 export class FeatureWalkthrough {
   private sanitizer = inject(DomSanitizer);
   private platformId = inject(PLATFORM_ID);
-  
+
   // সঠিক এমবেড লিঙ্ক ব্যবহার করতে হবে
   private videoId = 'rCCVGi_h3nA';
   private embedUrl = `https://www.youtube.com/embed/${this.videoId}?autoplay=1&rel=0`;

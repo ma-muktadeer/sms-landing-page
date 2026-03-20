@@ -6,7 +6,6 @@ register();
 
 @Component({
   selector: 'app-money-back-slider',
-  standalone: true,
   imports: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './money-back-slider.html',

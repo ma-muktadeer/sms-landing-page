@@ -1,12 +1,10 @@
 import { Component, Inject, PLATFORM_ID, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { RouterLink } from "@angular/router";
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-why-choose-us',
-  standalone: true,
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './why-choose-us.html',
   styleUrl: './why-choose-us.css',
 })
