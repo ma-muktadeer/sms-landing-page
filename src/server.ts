@@ -42,9 +42,15 @@ app.use(
 app.use((req, res, next) => {
   angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
+    .then((response) => {
+      if (response) {
+        // Cache for 1 hour in browser and 1 day in CDN for massive SEO/TTFB boost
+        res.set('Cache-Control', 'public, max-age=3600, s-maxage=86400');
+        writeResponseToNodeResponse(response, res);
+      } else {
+        next();
+      }
+    })
     .catch(next);
 });
 
