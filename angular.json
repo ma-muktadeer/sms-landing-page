@@ -40,7 +40,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "300kB",
-                  "maximumError": "1MB"
+                  "maximumError": "500KB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -49,13 +49,9 @@
                 }
               ],
               "outputHashing": "all",
-              "optimization": {
-                "scripts": true,
-                "styles": true,
-                "fonts": true
-              },
+              "optimization": true,
               "extractLicenses": true,
-              "sourceMap": false
+              "sourceMap": true
             },
             "development": {
               "optimization": false,
@@ -63,7 +59,7 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular/build:dev-server",
