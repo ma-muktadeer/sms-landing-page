@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './footer.css',
 })
 export class Footer {
-  private readonly banglaYear = new Date().toLocaleDateString('bn-BD');
+  private readonly banglaYear = new Date().toLocaleDateString('bn-BD').split('/')[2];
   data = {
     about: {
       logo: 'mentor erp logo png.png',
