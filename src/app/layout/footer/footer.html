@@ -1,14 +1,14 @@
 <footer class="pt-16 font-sans text-white border-t copyright-gradient">
   <div class="container mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12">
-    
-    <div class="">
-      <img [src]="data.about.logo" alt="Eduman" class="h-20"> 
+
+    <div>
+      <img [src]="data.about.logo" alt="Eduman" class="h-20">
       <p class="text-[14px] leading-relaxed text-white font-bold text-justify opacity-90 mt-6">
         {{ data.about.description }}
       </p>
-      <div class="flex space-x-3">
+      <div class="flex space-x-3 mt-6">
         @for (social of data.about.socials; track social.platform) {
-          <a [href]="social.link" 
+          <a [href]="social.link" target="_blank"
              class="w-9 h-9 flex items-center justify-center rounded-lg text-white text-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg {{social.bgColor}} border border-white/20">
             <i [class]="social.icon"></i>
           </a>
@@ -24,9 +24,9 @@
         <ul class="space-y-4">
           @for (link of section.links; track link) {
             <li>
-              <a href="#" class="text-[14px] font-bold text-white/80 hover:text-white transition-all duration-300 flex items-center group">
+              <a [routerLink]="link.path" class="text-[14px] font-bold text-white/80 hover:text-white transition-all duration-300 flex items-center group">
                 <i class="fas fa-chevron-right mr-3 text-[10px] text-blue-400 group-hover:translate-x-1 transition-transform"></i>
-                {{ link }}
+                {{ link.name }}
               </a>
             </li>
           }
@@ -43,7 +43,7 @@
           <i class="fas fa-map-marker-alt mt-1 text-blue-400"></i>
           <span class="text-white font-bold leading-relaxed">{{ data.contact.address }}</span>
         </div>
-        
+
         <div class="flex items-center space-x-3">
           <i class="fas fa-phone-alt text-blue-400"></i>
           <div class="font-extrabold">

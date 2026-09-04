@@ -16,8 +16,8 @@
     </div>
 
     <div class="max-w-7xl mx-auto px-4 relative group/slider">
-      <swiper-container #swiperRef slides-per-view="1" pagination="true" space-between="25"
-        breakpoints='{"640": {"slidesPerView": 2}, "1024": {"slidesPerView": 3}, "1280": {"slidesPerView": 3}}'
+      <swiper-container #swiperRef slides-per-view="1" pagination="true" space-between="25" init="false"
+        [breakpoints]='{"640": {"slidesPerView": 2}, "1024": {"slidesPerView": 3}, "1280": {"slidesPerView": 3}}'
         autoplay-delay="5000" class="pb-14">
         @for (item of solutions; track $index) {
         <swiper-slide>
@@ -55,13 +55,13 @@
         }
       </swiper-container>
 
-      <button (click)="slidePrev(swiperRef)"
-        class="absolute left-0 top-[45%] -translate-y-1/2 z-20 w-11 h-11 bg-white text-[#001d4a] shadow-2xl rounded-2xl flex items-center justify-center transition-all duration-500 hover:bg-orange-500 hover:text-white -ml-5 opacity-0 group-hover/slider:opacity-100 group-hover/slider:-ml-2 hidden md:flex border border-gray-50">
+      <button (click)="slidePrev()"
+        class="absolute left-0 top-[45%] -translate-y-1/2 z-20 w-11 h-11 bg-white text-[#001d4a] shadow-2xl rounded-2xl flex items-center justify-center transition-all duration-500 hover:bg-orange-500 hover:text-white -ml-5 opacity-0 group-hover/slider:opacity-100 group-hover/slider:-ml-2 hidden md:flex border border-gray-50 cursor-pointer">
         <i class="fa-solid fa-arrow-left-long"></i>
       </button>
 
-      <button (click)="slideNext(swiperRef)"
-        class="absolute right-0 top-[45%] -translate-y-1/2 z-20 w-11 h-11 bg-white text-[#001d4a] shadow-2xl rounded-2xl flex items-center justify-center transition-all duration-500 hover:bg-orange-500 hover:text-white -mr-5 opacity-0 group-hover/slider:opacity-100 group-hover/slider:-mr-2 hidden md:flex border border-gray-50">
+      <button (click)="slideNext()"
+        class="absolute right-0 top-[45%] -translate-y-1/2 z-20 w-11 h-11 bg-white text-[#001d4a] shadow-2xl rounded-2xl flex items-center justify-center transition-all duration-500 hover:bg-orange-500 hover:text-white -mr-5 opacity-0 group-hover/slider:opacity-100 group-hover/slider:-mr-2 hidden md:flex border border-gray-50 cursor-pointer">
         <i class="fa-solid fa-arrow-right-long"></i>
       </button>
     </div>

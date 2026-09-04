@@ -1,4 +1,5 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, ElementRef } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, ElementRef, inject, PLATFORM_ID, computed } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 
 register();
@@ -18,15 +19,9 @@ interface Solution {
 })
 export class SolutionsSection {
 
+  private platformId = inject(PLATFORM_ID);
   @ViewChild('swiperRef') swiperRef!: ElementRef;
 
-  slideNext(swiperEl: any) {
-    swiperEl.swiper.slideNext();
-  }
-
-  slidePrev(swiperEl: any) {
-    swiperEl.swiper.slidePrev();
-  }
 
   solutions: Solution[] = [
     {
@@ -63,7 +58,7 @@ export class SolutionsSection {
       ]
     },
     {
-      icon: 'fas fa-file-alt', // আইকন পরিবর্তন করা হয়েছে
+      icon: 'fas fa-file-alt',
       title: 'অটোমেটেড রেজাল্ট সিস্টেম',
       points: [
         'মার্কশিট ও প্রগ্রেস রিপোর্ট জেনারেশন',
@@ -74,4 +69,43 @@ export class SolutionsSection {
       ]
     }
   ];
+  isBrowser = computed(() => isPlatformBrowser(this.platformId));
+
+  ngAfterViewInit() {
+    if (this.isBrowser() && this.swiperRef?.nativeElement) {
+      const swiperEl = this.swiperRef.nativeElement;
+      const swiperParams = {
+        slidesPerView: 1,
+        spaceBetween: 25,
+        pagination: { clickable: true },
+        breakpoints: {
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1280: { slidesPerView: 3 }
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        }
+      };
+
+      Object.assign(swiperEl, swiperParams);
+
+      if (typeof swiperEl.initialize === 'function') {
+        swiperEl.initialize();
+      }
+    }
+  }
+
+  slideNext() {
+    if (this.swiperRef?.nativeElement?.swiper) {
+      this.swiperRef.nativeElement.swiper.slideNext();
+    }
+  }
+
+  slidePrev() {
+    if (this.swiperRef?.nativeElement?.swiper) {
+      this.swiperRef.nativeElement.swiper.slidePrev();
+    }
+  }
 }

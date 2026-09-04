@@ -30,7 +30,7 @@ export class PricingSection {
   pricingPlans: PricingPlan[] = [
     {
       name: 'সিলভার',
-      price: '৫',
+      price: '১০',
       gradient: 'from-[#ff782d] to-[#ff5100]',
       shadow: 'shadow-orange-200',
       priceColor: 'text-orange-600',
@@ -53,7 +53,7 @@ export class PricingSection {
     },
     {
       name: 'গোল্ড',
-      price: '১০',
+      price: '২০',
       isFeatured: true,
       gradient: 'from-[#3368fa] to-[#1e2171]',
       shadow: 'shadow-blue-200',
@@ -77,7 +77,7 @@ export class PricingSection {
     },
     {
       name: 'প্লাটিনাম',
-      price: '২০',
+      price: '২৫',
       gradient: 'from-[#10b981] to-[#047857]',
       shadow: 'shadow-emerald-200',
       priceColor: 'text-emerald-600',
