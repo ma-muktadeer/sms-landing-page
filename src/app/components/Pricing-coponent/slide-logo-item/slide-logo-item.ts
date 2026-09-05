@@ -25,17 +25,17 @@ export class SlideLogoItem {
   ];
 
   ngAfterViewInit() {
-    if (isPlatformBrowser(this.platformId) && this.swiperRef?.nativeElement) {
-      const swiperEl = this.swiperRef.nativeElement;
-      Object.assign(swiperEl, {
-        zoom: true, // Example config, mostly handled in HTML
-      });
+    // if (isPlatformBrowser(this.platformId) && this.swiperRef?.nativeElement) {
+    //   const swiperEl = this.swiperRef.nativeElement;
+    //   Object.assign(swiperEl, {
+    //     zoom: true, // Example config, mostly handled in HTML
+    //   });
 
-      // Initialize if method exists, otherwise it might be auto-initialized or not upgraded yet
-      if (typeof swiperEl.initialize === 'function') {
-        swiperEl.initialize();
-      }
-    }
+    //   // Initialize if method exists, otherwise it might be auto-initialized or not upgraded yet
+    //   if (typeof swiperEl.initialize === 'function') {
+    //     swiperEl.initialize();
+    //   }
+    // }
   }
 }
 

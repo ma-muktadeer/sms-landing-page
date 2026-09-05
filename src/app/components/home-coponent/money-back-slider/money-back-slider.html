@@ -2,7 +2,7 @@
   <div class="max-w-7xl mx-auto px-4 text-center">
 
     <div class="mb-12">
-      <img ngSrc="c12.png" alt="Guarantee" height="128" width="128" class="w-32 h-32 mx-auto mb-6 drop-shadow-lg">
+      <img ngSrc="c12.png" alt="Guarantee" height="128" width="128" class="mx-auto mb-6 drop-shadow-lg">
       <h2 class="text-xl md:text-2xl font-bold text-indigo-950"> মেন্টরই<span class="text-orange-500">আরপি</span>
         সফটওয়্যার ব্যবহার করে ৩০ দিনের মধ্যে সন্তুষ্ট না হলে,</h2>
       <h3 class="text-3xl md:text-5xl font-black text-blue-800 my-4">সম্পূর্ণ টাকা ফেরত গ্যারান্টি</h3>
@@ -13,11 +13,10 @@
     <swiper-container slides-per-view="1" space-between="20" loop="true" autoplay-delay="3000"
       autoplay-disable-on-interaction="false" navigation="true" pagination="true" pagination-clickable="true"
       grab-cursor="true" breakpoints='{
-  "640": { "slidesPerView": 2 },
-  "1024": { "slidesPerView": 4 }
-}' class="pb-16">
-
-      @for (card of cards; track card.img) {
+          "640": { "slidesPerView": 2 },
+          "1024": { "slidesPerView": 4 }
+        }' class="pb-16">
+      @for (card of cards; track $index) {
       <swiper-slide>
         <div
           class="bg-white rounded-[2rem] overflow-hidden shadow-lg border border-slate-100 mx-2 hover:-translate-y-2 transition-transform duration-500 group">
