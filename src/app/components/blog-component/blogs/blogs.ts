@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
 interface PricingSection {
@@ -6,12 +7,12 @@ interface PricingSection {
   priceText: string;
   buttonText: string;
   image: string;
-  features: string[]; 
+  features: string[];
 }
 
 @Component({
   selector: 'app-blogs',
-  imports: [],     
+  imports: [NgOptimizedImage],
   templateUrl: './blogs.html',
   styleUrl: './blogs.css',
 })
@@ -52,4 +53,4 @@ export class Blogs {
 
 
 
- 
+

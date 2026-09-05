@@ -71,31 +71,31 @@ export class SolutionsSection {
   ];
   isBrowser = computed(() => isPlatformBrowser(this.platformId));
 
-  ngAfterViewInit() {
-    if (this.isBrowser() && this.swiperRef?.nativeElement) {
-      const swiperEl = this.swiperRef.nativeElement;
-      const swiperParams = {
-        slidesPerView: 1,
-        spaceBetween: 25,
-        pagination: { clickable: true },
-        breakpoints: {
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-          1280: { slidesPerView: 3 }
-        },
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false
-        }
-      };
+  // ngAfterViewInit() {
+  //   if (this.isBrowser() && this.swiperRef?.nativeElement) {
+  //     const swiperEl = this.swiperRef.nativeElement;
+  //     const swiperParams = {
+  //       slidesPerView: 1,
+  //       spaceBetween: 25,
+  //       pagination: { clickable: true },
+  //       breakpoints: {
+  //         640: { slidesPerView: 2 },
+  //         1024: { slidesPerView: 3 },
+  //         1280: { slidesPerView: 3 }
+  //       },
+  //       autoplay: {
+  //         delay: 5000,
+  //         disableOnInteraction: false
+  //       }
+  //     };
 
-      Object.assign(swiperEl, swiperParams);
+  //     Object.assign(swiperEl, swiperParams);
 
-      if (typeof swiperEl.initialize === 'function') {
-        swiperEl.initialize();
-      }
-    }
-  }
+  //     if (typeof swiperEl.initialize === 'function') {
+  //       swiperEl.initialize();
+  //     }
+  //   }
+  // }
 
   slideNext() {
     if (this.swiperRef?.nativeElement?.swiper) {

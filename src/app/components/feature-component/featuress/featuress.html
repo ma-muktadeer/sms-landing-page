@@ -1,8 +1,6 @@
-@defer (on idle) {
 <section class="relative w-full overflow-hidden flex flex-col justify-between transition-all duration-500"
   [style.minHeight]="minHeight">
 
-  <img [src]="bgImage()" alt="Feature Image"
+  <img fill [ngSrc]="bgImage()" alt="Feature Image"
     class="absolute inset-0 w-full h-full object-cover object-center -z-10 pointer-events-none">
 </section>
-}

@@ -1,10 +1,11 @@
 import { Component, signal, computed } from '@angular/core'; // computed যোগ করা হয়েছে
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { NgOptimizedImage } from "@angular/common";
 
 @Component({
   selector: 'app-tutorial-video',
   standalone: true, // যদি standalone হয়
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './tutorial-video.html',
   styleUrl: './tutorial-video.css',
 })
@@ -20,49 +21,49 @@ export class TutorialVideo {
       thumbnail: 'thumbnail.jpg.jpeg',
       videoUrl: 'https://youtu.be/rCCVGi_h3nA'
     },
-    
+
     {
       title: 'Eduman- Teacher Information',
       thumbnail: 'thumbnail.jpg.jpeg',
       videoUrl: 'https://youtu.be/rCCVGi_h3nA'
     },
-    
+
     {
       title: 'Eduman- Teacher Information',
       thumbnail: 'thumbnail.jpg.jpeg',
       videoUrl: 'https://youtu.be/rCCVGi_h3nA'
     },
-    
+
     {
       title: 'Eduman- Teacher Information',
       thumbnail: 'thumbnail.jpg.jpeg',
       videoUrl: 'https://youtu.be/rCCVGi_h3nA'
     },
-    
+
     {
       title: 'Eduman- Teacher Information',
       thumbnail: 'thumbnail.jpg.jpeg',
       videoUrl: 'https://youtu.be/rCCVGi_h3nA'
     },
-    
+
     {
       title: 'Eduman- Teacher Information',
       thumbnail: 'thumbnail.jpg.jpeg',
       videoUrl: 'https://youtu.be/rCCVGi_h3nA'
     },
-    
+
     {
       title: 'Eduman- Teacher Information',
       thumbnail: 'thumbnail.jpg.jpeg',
       videoUrl: 'https://youtu.be/rCCVGi_h3nA'
     },
-    
+
     {
       title: 'Eduman- Teacher Information',
       thumbnail: 'thumbnail.jpg.jpeg',
       videoUrl: 'https://youtu.be/rCCVGi_h3nA'
     },
-    
+
   ]);
 
   selectedVideo = signal<string | null>(null);

@@ -1,11 +1,12 @@
 import { Component, inject, PLATFORM_ID, signal } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-feature-walkthrough',
   templateUrl: './feature-walkthrough.html',
-  styleUrl: './feature-walkthrough.css'
+  styleUrl: './feature-walkthrough.css',
+  imports: [NgOptimizedImage]
 })
 export class FeatureWalkthrough {
   private sanitizer = inject(DomSanitizer);

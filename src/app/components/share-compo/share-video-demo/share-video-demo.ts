@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { NgOptimizedImage } from "@angular/common";
 
 @Component({
   selector: 'app-share-video-demo',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './share-video-demo.html',
   styleUrl: './share-video-demo.css',
 })

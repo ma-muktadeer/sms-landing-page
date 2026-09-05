@@ -1,9 +1,10 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-smart-features',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './smart-features.html',
   styleUrl: './smart-features.css',
 })

@@ -1,11 +1,12 @@
 import { Component, inject, PLATFORM_ID, signal } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-video-showcase-section',
   templateUrl: './video-showcase-section.html',
   styleUrl: './video-showcase-section.css',
+  imports: [NgOptimizedImage],
 })
 export class VideoShowcaseSection {
   private sanitizer = inject(DomSanitizer);

@@ -1,31 +1,42 @@
-@defer (on idle) {
 <section class="py-16 bg-slate-50 overflow-hidden font-sans">
   <div class="max-w-7xl mx-auto px-4 text-center">
 
     <div class="mb-12">
-      <img loading="lazy" src="c12.png" alt="Guarantee" class="w-32 h-32 mx-auto mb-6 drop-shadow-lg">
+      <img ngSrc="c12.png" alt="Guarantee" height="128" width="128" class="w-32 h-32 mx-auto mb-6 drop-shadow-lg">
       <h2 class="text-xl md:text-2xl font-bold text-indigo-950"> মেন্টরই<span class="text-orange-500">আরপি</span>
         সফটওয়্যার ব্যবহার করে ৩০ দিনের মধ্যে সন্তুষ্ট না হলে,</h2>
       <h3 class="text-3xl md:text-5xl font-black text-blue-800 my-4">সম্পূর্ণ টাকা ফেরত গ্যারান্টি</h3>
       <p class="text-red-600 font-black text-xl uppercase mt-6">থার্ড পার্টির মাধ্যমে "MentorERP" সফটওয়্যারের কোন সেবা
         প্রদান করা হয় না</p>
     </div>
-
-    <swiper-container #swiperRef init="false" slides-per-view="1" space-between="20" loop="true" autoplay-delay="3000"
+    @defer(on immediate){
+    <swiper-container slides-per-view="1" space-between="20" loop="true" autoplay-delay="3000"
       autoplay-disable-on-interaction="false" navigation="true" pagination="true" pagination-clickable="true"
-      breakpoints='{
-        "640": { "slidesPerView": 2 },
-        "1024": { "slidesPerView": 4 }
-      }' class="pb-16">
-      @for (card of cards; track $index) {
+      grab-cursor="true" breakpoints='{
+  "640": { "slidesPerView": 2 },
+  "1024": { "slidesPerView": 4 }
+}' class="pb-16">
+
+      @for (card of cards; track card.img) {
       <swiper-slide>
         <div
-          class="bg-white rounded-[2rem] overflow-hidden shadow-lg border border-slate-100 mx-2 hover:-translate-y-2 transition-transform duration-500">
-          <img [src]="card.img" [alt]="card.title" class="w-full h-auto block">
+          class="bg-white rounded-[2rem] overflow-hidden shadow-lg border border-slate-100 mx-2 hover:-translate-y-2 transition-transform duration-500 group">
+          <div class="relative w-full h-48 md:h-60 overflow-hidden">
+            <img [ngSrc]="card.img" width="600" height="600" [priority]="$index < 4" [alt]="card.title"
+              class="w-full h-full object-cover block transition-transform duration-700 group-hover:scale-110">
+          </div>
+
+          @if (card.title) {
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-slate-800">{{ card.title }}</h3>
+          </div>
+          }
+
         </div>
       </swiper-slide>
       }
     </swiper-container>
+    }
 
     <div class="mt-2 flex flex-col md:flex-row items-center justify-between copyright-gradient p-2 rounded-md gap-6">
       <div class="text-left flex items-center gap-4">
@@ -42,4 +53,3 @@
 
   </div>
 </section>
-}

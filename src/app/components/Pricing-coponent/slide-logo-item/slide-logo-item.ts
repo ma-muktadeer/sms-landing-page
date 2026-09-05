@@ -1,12 +1,12 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, AfterViewInit, ViewChild, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { register } from 'swiper/element/bundle';
 
 register();
 
 @Component({
   selector: 'app-slide-logo-item',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './slide-logo-item.html',
   styleUrl: './slide-logo-item.css',
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -40,7 +40,6 @@ export class SlideLogoItem {
 }
 
 
-  
 
- 
- 
+
+

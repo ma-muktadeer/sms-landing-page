@@ -2,10 +2,10 @@
   <div class="space-y-12">
     @for (section of sections(); track section.title) {
       <div class="grid md:grid-cols-2 gap-8 items-center border-b border-gray-100 pb-16 last:border-0">
-        
+
         <div class="relative group">
           <div class="rounded-2xl shadow-xl  bg-white p-3">
-            <img [src]="section.image" [alt]="section.title" 
+            <img [ngSrc]="section.image" [alt]="section.title"
                  class=" object-cover transition-transform duration-500 group-hover:scale-103 rounded-2xl">
           </div>
         </div>
@@ -29,7 +29,7 @@
             }
           </ul>
 
-          
+
           <button class="w-fit bg-gradient-primary cursor-pointer hover:bg-blue-900 text-white px-8 py-2.5 rounded-md font-bold text-sm transition-all shadow-md active:scale-95">
             {{ section.buttonText }}
           </button>

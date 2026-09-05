@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgOptimizedImage } from "@angular/common";
 
 interface PricingSection {
   title: string;
@@ -11,7 +12,7 @@ interface PricingSection {
 
 @Component({
   selector: 'app-pricing-list',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './pricing-list.html',
   styleUrl: './pricing-list.css',
 })

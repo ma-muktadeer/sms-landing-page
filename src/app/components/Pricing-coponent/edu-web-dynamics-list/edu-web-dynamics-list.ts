@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { NgOptimizedImage } from "@angular/common";
 
 @Component({
   selector: 'app-edu-web-dynamics-list',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './edu-web-dynamics-list.html',
 })
 export class EduWebDynamicsList {

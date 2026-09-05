@@ -1,16 +1,17 @@
 import { Component, signal, computed, model } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgOptimizedImage } from "@angular/common";
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NgOptimizedImage],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
 export class Contact {
   divisions = signal([
-    'Barishal', 'Chattogram', 'Dhaka', 'Khulna', 
+    'Barishal', 'Chattogram', 'Dhaka', 'Khulna',
     'Mymensingh', 'Rajshahi', 'Rangpur', 'Sylhet'
   ]);
 
@@ -52,7 +53,7 @@ export class Contact {
     const district = this.selectedDistrict();
     if (district === 'All') return [];
     // এখানে জেলা অনুযায়ী থানা রিটার্ন করবে
-    return this.allThanas[district] || []; 
+    return this.allThanas[district] || [];
   });
 
   onDivisionChange() {
